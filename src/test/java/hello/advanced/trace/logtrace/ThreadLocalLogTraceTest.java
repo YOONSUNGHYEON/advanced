@@ -13,7 +13,7 @@ public class ThreadLocalLogTraceTest {
         TraceStatus status2 = trace.begin("hello2");
         trace.end(status2);
         trace.end(status1);
-        Assertions.assertThat(status1).isNull();
+        Assertions.assertThat(status1).isNotNull();
     }
     @Test
     void begin_exception_level2() {
