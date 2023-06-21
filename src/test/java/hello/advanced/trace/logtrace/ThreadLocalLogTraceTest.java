@@ -2,6 +2,7 @@
 package hello.advanced.trace.logtrace;
 
 import hello.advanced.trace.TraceStatus;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ThreadLocalLogTraceTest {
@@ -12,6 +13,7 @@ public class ThreadLocalLogTraceTest {
         TraceStatus status2 = trace.begin("hello2");
         trace.end(status2);
         trace.end(status1);
+        Assertions.assertThat(status1).isNotNull();
     }
     @Test
     void begin_exception_level2() {
